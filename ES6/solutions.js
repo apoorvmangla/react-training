@@ -49,7 +49,7 @@ class priceCalculator {
     }
 }
 
-let calc = prices.map(price => {
+prices.map(price => {
     let totalPrice = new priceCalculator(price);
     console.log(totalPrice.calculatePrice());
 })
@@ -109,4 +109,39 @@ const someArray = ["item 1", "item 2", "item 3", "item 4"];
 [, ...newArray] = someArray
 console.log(newArray);
 
+//Question 11
+const wrap = (str) => { console.log([str])};
+const unwrap = ([str]) => { console.log(str)};
+wrap('package');
+unwrap(['package']);
+
+//Question 12
+const parseDate = (dateInput) => {
+    let vals = dateInput.split('-');
+    const [year, month, date] = vals;
+    console.log(year, month, date);
+}
+parseDate('2025-09-26');
+
+// Solution 13
+let x = { A: ['t', 'e', 's', 't']}
+const { A:[,,thirdValue]} = x;
+console.log(thirdValue);
+
+// Solution 15
+const givenArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+let newArr = givenArr.slice(-4);
+console.log(newArr);
+
+// Solution 17
+let matrix = Array(10).fill(null).map(()=>Array(10).fill(null));
+console.log(matrix);
+
+// Solution 18
+let someFunc = (delay = 1000) => {
+    setTimeout( ()=>{
+        console.log('callback function called!');
+    }, delay)
+}
+someFunc(4000);
 })
